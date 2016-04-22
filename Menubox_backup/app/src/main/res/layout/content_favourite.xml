@@ -9,23 +9,25 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.zweng4.top_10_downloader.MainActivity"
-    tools:showIn="@layout/activity_main">
-
-    <Button
+    tools:context="com.example.zweng4.menubox.FavouriteActivity"
+    tools:showIn="@layout/activity_favourite">
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pase Xml File"
+        android:text="Comparison: "
         android:id="@+id/btnParse"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/xmlListView"
+        android:layout_alignEnd="@+id/xmlListView" />
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/xmlListView"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/btnParse"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>
