@@ -42,7 +42,7 @@ public class checkListActivity extends AppCompatActivity {
         }
         else {
             String[] notFound = new String[1];
-            notFound[0] = new String("No Restaurant Found");
+            notFound[0] = new String("No books");
 
             ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.no_list_item, notFound);
             checkList.setAdapter(adapter);

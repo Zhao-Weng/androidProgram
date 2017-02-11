@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText name;
     private Button confirm;
     private Button add;
+    private Button reset;
     private HashMap<String, String> map;
 
     @Override
@@ -25,19 +26,21 @@ public class MainActivity extends AppCompatActivity {
 
         bookName = (EditText) findViewById(R.id.bookName);
         tagId = (EditText) findViewById(R.id.tagId);
-        name = (EditText) findViewById(R.id.name);
+        //name = (EditText) findViewById(R.id.name);
         confirm = (Button) findViewById(R.id.confirm);
         add = (Button) findViewById(R.id.add);
+        reset = (Button) findViewById(R.id.reset);
         map = new HashMap<>();
-        map.put("!", "123");
-        map.put("!@#@!#", "##DSFADSF");
+
         add.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 String tag = tagId.getText().toString().replace("\n", "").replace("\r", "");;
                 String book = bookName.getText().toString().replace("\n", "").replace("\r", "");;
                 map.put(tag,book);
-                Toast.makeText(MainActivity.this,"item added" + book,Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,"item added",Toast.LENGTH_SHORT).show();
+                tagId.setText("");
+                bookName.setText("");
             }
         });
         confirm.setOnClickListener(new
@@ -52,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
                                               }
 
         );
-
+        reset.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                map = new HashMap<>();
+                Toast.makeText(MainActivity.this,"items removed, new books",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
